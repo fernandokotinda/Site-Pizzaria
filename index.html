@@ -5,23 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imgs/Pizza-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script>
+        window.onload = function() {
+            window.location.href = '#menu';
+
+        };
+    </script>
     <title>La pizza</title>
 </head>
 <body>
    <header>
     <div id="menu">
-        <div class="logo">
+        <div class="logo">  
             <a href="#"><img src="imgs/Pizza-icon.png" alt="Icon La Pizza"></a>
             <a href="#"><h1>LA PIZZA</h1></a>
         </div>
         <nav>
-            <ul class="menu-hamburger">
+            <ul class="op menu-hamburger">
                 <li><a href="#">HOME</a></li>
                 <li><a href="">MENU</a></li>
                 <li><a href="">PEDIR ONLINE</a></li>
                 <li><a href="#footer">LOCAL E HORARIOS</a></li>
                 <li><a href="#footer">CONTATO</a></li>
             </ul>
+            <img src="imgs/cardapio.png" alt="Menu Hamburger" onclick="abrirMenu()">
         </nav>
     </div>
     <main>
@@ -82,4 +89,43 @@
     </footer>
    </header>
 </body>
+<script>
+
+function verificarTamanhoDaTela() {
+    window.addEventListener('resize', function() {
+
+        let menuImg = document.querySelector("nav img");
+        let menu = document.querySelector(".op");
+
+        if (window.innerWidth <= 1300) {
+
+            menuImg.style.display = "flex";
+            menu.style.display = "none";
+
+        } else if(window.innerWidth > 1300) {
+
+            menuImg.style.display = "none";
+            menu.style.display = "flex";
+        }
+    });
+}
+   
+
+    function abrirMenu() {
+
+        let menuHamburger = document.querySelector(".menu-hamburger");
+
+        if(menuHamburger.style.display == 'flex') {
+                
+            menuHamburger.style.display = 'none'
+            verificarTamanhoDaTela();
+                
+        } else {
+                
+            menuHamburger.style.display = 'flex'
+            verificarTamanhoDaTela();
+         }
+    }
+
+   </script>
 </html>
