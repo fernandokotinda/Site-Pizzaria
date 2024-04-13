@@ -132,10 +132,6 @@ h1 {
 }
 .inicio h1 {
 
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     text-align: center;
     
     font-size: 170px;
@@ -191,7 +187,7 @@ input[type='button'] {
     justify-content: center;
     align-items: center;
     gap: 60px;
-    background-color: bisque;
+    background-color: #efcca2;
     
     border-bottom: 2px solid black;
 

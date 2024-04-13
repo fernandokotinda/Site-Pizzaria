@@ -9,22 +9,23 @@
 </head>
 <body>
    <header>
-    <div id="menu">
-        <div class="logo">  
-            <a href="#"><img src="imgs/Pizza-icon.png" alt="Icon La Pizza"></a>
-            <a href="#"><h1>LA PIZZA</h1></a>
+        <div id="menu">
+            <div class="logo">  
+                <a href="#"><img src="imgs/Pizza-icon.png" alt="Icon La Pizza"></a>
+                <a href="#"><h1>LA PIZZA</h1></a>
+            </div>
+            <nav>
+                <ul class="op menu-hamburger">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="menu.html">MENU</a></li>
+                    <li><a href="">PEDIR ONLINE</a></li>
+                    <li><a href="#footer">LOCAL E HORARIOS</a></li>
+                    <li><a href="#footer">CONTATO</a></li>
+                </ul>
+                <img src="imgs/cardapio.png" alt="Menu Hamburger" onclick="abrirMenu()">
+            </nav>
         </div>
-        <nav>
-            <ul class="op menu-hamburger">
-                <li><a href="#">HOME</a></li>
-                <li><a href="">MENU</a></li>
-                <li><a href="">PEDIR ONLINE</a></li>
-                <li><a href="#footer">LOCAL E HORARIOS</a></li>
-                <li><a href="#footer">CONTATO</a></li>
-            </ul>
-            <img src="imgs/cardapio.png" alt="Menu Hamburger" onclick="abrirMenu()">
-        </nav>
-    </div>
+    </header>
     <main>
         <section class="inicio">
             <h1>LA PIZZA</h1>
@@ -51,7 +52,7 @@
                     <h2>NOSSO MENU</h2>
                     <p>Na LA PIZZA, acreditamos que a diversidade é o tempero da vida. É por isso que estamos orgulhosos de apresentar a você nosso extenso menu de opções, cuidadosamente elaborado para atender a todos os paladares e preferências.</p>
                     <hr>
-                    <input class="button-menu" type="button" value="MENU" onclick="window.location.href= '' ">
+                    <input class="button-menu" type="button" value="MENU" onclick="window.location.href= 'menu.html' ">
                 </div>
             </div>
         </section>
@@ -83,9 +84,7 @@
                 <p>Desenvolvido por <a href="https://github.com/fernandokotinda" target="_blank"><strong><em>&copy;FernandoKotinda</em></strong></a></p>
             </div>
         </div>
-
     </footer>
-   </header>
 </body>
 <script>
 
