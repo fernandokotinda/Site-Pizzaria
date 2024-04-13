@@ -306,10 +306,11 @@ footer h2 {
     justify-content: center;
 
     width: 100%;
+}
 
+.contato strong {
 
-    
-
+    margin-left: 5px;
 }
 .local {
 
