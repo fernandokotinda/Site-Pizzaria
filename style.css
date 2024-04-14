@@ -105,6 +105,11 @@ h1 {
     transform: scale(1.1);
 
 }
+#menu ul li:nth-child(2) a, #menu ul li:nth-child(3)  {
+
+    color: white;
+
+}
 
 #menu ul li:first-child a {
 
@@ -374,7 +379,7 @@ footer h3 {
     .inicio {
 
         margin-top: 80px;
-        height: 800px;
+        height: 600px;
     }
     .inicio h1 {
         font-size: 90px;

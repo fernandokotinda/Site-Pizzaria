@@ -1,4 +1,3 @@
-@charset "UTF-8";
 
 *{
 
@@ -31,24 +30,158 @@
     text-shadow: 7px 11px 1px black;
     backdrop-filter: blur(1px);
 }
+#menu ul li:nth-child(1) a, #menu ul li:nth-child(3)  {
+
+    color: white;
+
+}
+#menu ul li:nth-child(2) a {
+
+    color: brown;
+}
 .cardapio {
 
     background-color: #efcca2;
 }
-hr {
-
-    padding: 30px;
-    width: 100%;
-    border-color: black;
-}
 .cardapio img {
 
-    height: 150px;
+    height: 150px;  
     width: 150px;
+}
+.cardapio h2 {
+
+    font-family: 'font-h2';
+    font-size: 45px;
+    color: brown;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.389);
+
+    text-align: center;
+    padding: 30px;
 }
 .container-pizza {
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+
+    padding: 30px 0px;
+   
+}
+hr {
+
+    border-color: black;
+    width: 75%;
+        margin-left: 13%;
+
+    
+}
+.pizza {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+
+    padding-left: 200px;
+}
+.tamanho {
+
+    text-align: center;
+    width: 300px;
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.nome-tamanho, .preco {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+
+   
+}
+.nome-tamanho {
+
+    color: rgb(123, 123, 123);
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+.preco {
+
+    font-size: 20px;
+}
+.pizza h3 {
+
+    font-family: 'font-h2';
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px black;
+    letter-spacing: 1px;
+    
+}
+.nome-pizza {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    
+    margin: 0px 20px;
+}
+.nome-pizza p {
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    
+    color: rgb(80, 80, 80);
+    width: 300px;
+
+}
+.bebidas h2 {
+
+    padding: 60px;
+}
+
+@media screen and (max-width: 1300px) {
+
+    .inicio-menu {
+
+        margin-top: 80px;
+        background-position: center center;
+    }
+    .inicio-menu h1 {
+
+        font-size: 90px;
+    }
+    .container-pizza, .pizza {
+
+        flex-direction: column;
+        
+
+    }
+    .pizza {
+
+        padding: 0px;
+    }
+    .nome-pizza {
+
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0px 30px;
+    }
+    .nome-pizza p {
+
+        text-align: center;
+    }
+    .bebidas .preco {
+
+        display: block;
+        text-align: center;
+
+    }
+
+
 }
