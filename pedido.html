@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/Pizza-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="pedido.css">
+    <title>La pizza</title>
+</head>
+<body>
+   <header>
+        <div id="menu">
+            <div class="logo">  
+                <a href="index.html"><img src="imgs/Pizza-icon.png" alt="Icon La Pizza"></a>
+                <a href="index.html"><h1>LA PIZZA</h1></a>
+            </div>
+            <nav>
+                <ul class="op menu-hamburger">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="menu.html">MENU</a></li>
+                    <li><a href="#">PEDIR ONLINE</a></li>
+                    <li><a href="#footer">LOCAL E HORARIOS</a></li>
+                    <li><a href="#footer">CONTATO</a></li>
+                </ul>
+                <img src="imgs/cardapio.png" alt="Menu Hamburger" onclick="abrirMenu()">
+            </nav>
+        </div>
+    </header>
+    <main> 
+        <section class="inicio-pedido"> 
+            <h1>PEDIR ONLINE</h1>
+        </section>
+
+        <section class="container-tamanho">
+            <h2>Escolha o Tamanho da pizza</h2>
+            <div class="choose-size">
+                <div class="tamanho-pizza pequena">
+                    <img src="imgs/img-pizza-tamanho.png" alt="Pizza pequena">
+                    <h2>PEQUENA</h2>
+                    <p>4 Pedaços</p>
+                </div>
+                <div class="tamanho-pizza media">
+                    <img src="imgs/img-pizza-tamanho.png" alt="Pizza média">
+                    <h2>MEDIA</h2>
+                    <p>6 Pedaços</p>
+                </div>
+                <div class="tamanho-pizza grande">
+                    <img src="imgs/img-pizza-tamanho.png" alt="Pizza grande">
+                    <h2>GRANDE</h2>
+                    <p>8 Pedeços</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="fundo-pedido">
+            <div class="escolher-pizza">
+                <h2>ESCOLHA DE 1 A 3 SABORES</h2>
+                <div class="container-pizza">
+                    <div class="pizza">
+                        <img src="imgs/calabresa-600x600.png" alt="Pizza Calabresa">
+                        <div class="nome-pizza">
+                            <h3>Calabresa</h3>
+                            <p>(Calabresa, cebola e azeitonas verdes)</p>
+                        </div>
+                        <div class="tamanho">
+                            <div class="preco">
+                                <p>R$6,80</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pizza">
+                        <img src="imgs/mussarela-300x300.png" alt="Pizza Mussarela">
+                        <div class="nome-pizza">
+                            <h3>Mussarela</h3>
+                            <p>(Com molho de tomate temperado)</p>
+                        </div>
+                        <div class="tamanho">
+                            <div class="preco">
+                                <p>R$6,80</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="pizza">
+                        <img src="imgs/frango-catupiry-300x300.png" alt="Pizza Frango com Catupiry">
+                        <div class="nome-pizza">
+                            <h3>Frango com Catupiry</h3>
+                            <p>(Mussarela, frango desfiado, catupiry, molho de tomate e orégano)</p>
+                        </div>
+                        <div class="tamanho">
+                            <div class="preco">
+                                <p>R$6,80</p>
+                            </div>
+                        </div>
+                    </div>
+             
+                    <div class="pizza">
+                        <img src="imgs/portuguesa-300x300.png" alt="Pizza Portuguesa">
+                        <div class="nome-pizza">
+                            <h3>Portuguesa</h3>
+                            <p>(Presunto, ovo, cebola e azeitonas verdes)</p>
+                        </div>
+                        <div class="tamanho">
+                            <div class="preco">
+                                <p>R$6,80</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="pizza">
+                        <img src="imgs/4-queijos-300x300.png" alt="Pizza 4 queijos">
+                        <div class="nome-pizza">
+                            <h3>4 queijos</h3>
+                            <p>(Catupiry, parmesão, gorgonzola e mussarela)</p>
+                        </div>
+                        <div class="tamanho">
+                            <div class="preco">
+                                <p>R$6,80</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="button" value="CONTINUAR ->">
+            </div>
+        </section>
+
+        <section class="fundo-pedido">
+            <div class="escolher-pizza">
+                <h2>ESCOLHA DE 1 A 3 BEBIDAS</h2>
+                <div class="container-pizza">
+
+                    <div class="pizza">
+                        <img src="imgs/agua-mineral-300x300.png" alt="Água mineral">
+                        <div class="nome-pizza">
+                            <h3>Agua mineral</h3>
+                            <p>500ml, com ou sem gas</p>
+                        </div>
+                        <div class="tamanho">
+                            <div class="preco">
+                                <p>R$6,80</p>
+                            </div>
+                        </div>
+                    </div>
+             
+                    <div class="pizza">
+                        <img src="imgs/suco-de-manga-300x300-removebg-preview.png" alt="Suco de manga">
+                        <div class="nome-pizza">
+                            <h3>Suco de manga</h3>
+                            <p>300ml</p>
+                        </div>
+                        <div class="tamanho">
+                            <div class="preco">
+                                <p>R$6,80</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="pizza">
+                        <img src="imgs/coca-cola-lata-350ml-300x300-removebg-preview.png" alt="Coca Cola lata">
+                        <div class="nome-pizza">
+                            <h3>Coca Cola lata</h3>
+                            <p>350ml</p>
+                        </div>
+                        <div class="tamanho">
+                            <div class="preco">
+                                <p>R$6,80</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="button" value="CONTINUAR ->">
+            </div>
+        </section>
+
+        <section class="fundo-pedido">
+            <div class="escolher-pizza">
+                <h2>ESCOLHA A FORMA DE PAGAMENTO</h2>
+                <div class="container-pagamento">
+
+                    <div class="pag">
+                        <img src="imgs/pix-icon.png" alt="PIX">
+                        <h3>PIX</h3>
+                    </div>
+
+                    <div class="pag">
+                        <img src="imgs/debito-icon.png" alt="Débito">
+                        <h3>Cartão de Débito</h3>
+                    </div>
+
+                    <div class="pag">
+                        <img src="imgs/icon-credito.png" alt="Crédito">
+                        <h3>Cartão de Crédito</h3>
+                    </div>
+
+                    <div class="pag">
+                        <img src="imgs/dinheiro-icon.png" alt="Dinheiro">
+                        <h3>Dinheiro</h3>
+                    </div>
+             
+                </div>
+
+                <hr>
+
+                <h2>COMO SERA ENTREGUE</h2>
+                <div class="entrega">
+                    <div class="radio">
+                        <label for="deliveryInPlace">Buscar na pizzaria</label>
+                        <input type="radio" name="tipoEntrega" id="deliveryInPlace" checked>
+                    </div>
+
+                    <div class="radio">
+                        <label for="deliveryInHome">Entregar para endereço</label>
+                        <input type="radio" name="tipoEntrega" id="deliveryInHome">
+                    </div>
+                </div>
+
+                <hr class="hr-entrega">
+                <form action="#" method="post" id="local-entrega">
+                    <h2>INFORMACOES DE CONTATO</h2>
+                    <div class="linha">
+                        <div class="flex">
+                            <label for="name">Nome: *</label>
+                            <input type="text" name="nome" id="name" required autocomplete="name">
+                        </div>
+
+                        <div class="flex">
+                            <label for="surname">Sobrenome: *</label>
+                            <input type="text" name="sobrenome" id="surname" required>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="flex">
+                            <label for="telephone">Telefone: *</label>
+                            <input type="tel" name="tel" id="telephone" required oninput="formatarTelefone(this)" maxlength="11" autocomplete="tel">
+                        </div>
+                        <div class="flex">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" autocomplete="email">
+                        </div>
+                    </div>
+                    <h2>ENDERECO DE ENTREGA</h2>
+                     <div class="linha">
+    
+                        <div class="flex size">
+                            <label for="CEP">CEP: *</label>
+                            <input type="text" name="cep" id="CEP" class="input" minlength="9" maxlength="9" required oninput=" formatarCEP(this)"> 
+                        </div>
+        
+                        <div class="flex size">
+                            <label for="endereco">Rua: *</label>
+                            <input type="text" name="address" id="endereco" class="input" required autocomplete="street-address">
+                        </div>
+        
+                        
+                    </div>
+                    <div class="linha">
+    
+                        <div class="flex">
+                            <label for="numero">Número: *</label>
+                            <input type="text" name="num-house" id="numero" class="input" oninput="validarNumeros(this)"required>
+                        </div>
+        
+                        <div class="flex">
+                            <label for="complemento">Complemento:</label>
+                            <input type="text" name="complement" id="complemento" class="input">
+                        </div>
+        
+                        <div class="flex">
+                            <label for="bairro">Bairro: *</label>
+                            <input type="text" name="neighborhood" id="bairro" class="input" required>
+                        </div>
+    
+                    </div>
+                    <div class="linha">
+                        
+                        <div class="flex size">
+                            <label for="estado">Estado: </label>
+                            <select name="state" id="estado" required>
+                                <option value="Acre">Acre</option>
+                                <option value="Alagoas">Alagoas</option>
+                                <option value="Amapá">Amapá</option>
+                                <option value="Amazonas">Amazonas</option>
+                                <option value="Bahia">Bahia</option>
+                                <option value="Ceará">Ceará</option>
+                                <option value="Distrito Federal">Distrito Federal</option>
+                                <option value="Espírito Santo">Espírito Santo</option>
+                                <option value="Goiás">Goiás</option>
+                                <option value="Maranhão">Maranhão</option>
+                                <option value="Mato Grosso">Mato Grosso</option>
+                                <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                                <option value="Minas Gerais">Minas Gerais</option>
+                                <option value="Pará">Pará</option>
+                                <option value="Paraíba">Paraíba</option>
+                                <option value="Paraná">Paraná</option>
+                                <option value="Pernambuco">Pernambuco</option>
+                                <option value="Piauí">Piauí</option>
+                                <option value="Rio de Janeiro">Rio de Janeiro</option>
+                                <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                                <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                                <option value="Rondônia">Rondônia</option>
+                                <option value="Roraima">Roraima</option>
+                                <option value="Santa Catarina">Santa Catarina</option>
+                                <option value="São Paulo">São Paulo</option>
+                                <option value="Sergipe">Sergipe</option>
+                                <option value="Tocantins">Tocantins</option>
+                            </select>
+                        </div>
+                
+                        <div class="flex size">
+                            <label for="cidade">Cidade: *</label>
+                            <input type="text" name="city" id="cidade" class="input" required>
+                        </div>
+                    </div>
+                    <input type="submit" value="CONTINUAR ->"> 
+                </form>
+                
+                <input type="button" value="CONTINUAR ->">
+               
+            </div>
+        </section>
+
+        <section class="fundo-pedido">
+            <div class="escolher-pizza">
+                <h2>DADOS DO PEDIDO</h2>
+                <div class="pedido">
+                    <div class="borda">
+                        <h3>PIZZA</h3>
+                    </div>
+                    <div class="pad">
+                        <h3>BEBIDA</h3>
+                    </div>
+                </div>
+                <hr>
+                <h2>CONTATO E ENDERECO DE ENTREGA</h2>
+                <div class="pedido">
+                    <div class="borda">
+                        <p>Nome: </p>
+                        <p>Telefone:</p>
+                        <p>Email:</p>
+                    </div>
+                    <div class="pad"> 
+                        <p>CEP:</p>
+                        <p>Rua:</p>
+                        <p>Complemento:</p>
+                    </div>
+                    <div class="pad pad2">
+                        <p>Bairro:</p>
+                        <p>Estado:</p>
+                        <p>Cidade:</p>
+                    </div>
+                </div>
+                <div class="botoes">
+                    <input type="button" value="IMPRIMIR">
+                    <input type="button" value="CONFIRMAR PEDIDO">
+                </div>
+            </div>
+        </section>
+
+        <div id="popUp" class="modal">
+            <div class="modal-content">
+                <div class="head-popUp">
+                    <span class="alerta"><img src="imgs/Pizza-icon.png" alt="alerta"></span>
+                    <span class="fechar" id="fecharPopUp">&times;</span>
+                </div>
+                <p class="popUpMessage">Seu pedido foi confirmado! &#10004 <br> Obrigado por comprar na LAPIZZA! </p>
+                <button type="button" id="ok" on>OK</button>
+            </div>
+        </div>
+        
+    </main>
+    <footer id="footer">
+        <h2>VEM PEGAR UMA FATIA!</h2>
+            <div class="info">
+                <div class="contato">
+                    <div>
+                        <h3>CONTATO:</h3>
+                        <p>Tel: 041-3456-7890 <br> lapizza@gmail.com </p>
+                    </div>
+                    
+                    <div>
+                        <h3>HORARIOS:</h3>
+                        <p>Segunda - Sexta: <strong>07:00 - 22:00</strong> <br>
+                            Sábado:   <strong>09:00 - 22:00</strong> <br>
+                            Domingo:   <strong>08:00 - 15:00</strong> </p>
+                    </div>
+                </div>
+                <div class="local">
+                    <h3>LOCAL</h3>
+                    <p>R. Ulisses Vieira, 426, 98 <br> Curitiba, PR 12345-678</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1801.158678585808!2d-49.29620615694536!3d-25.461076377971164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce3d7910e4795%3A0x4bc3f0cb70d94f9e!2sIzza%20La%20Pizza!5e0!3m2!1spt-PT!2sbr!4v1712782579387!5m2!1spt-PT!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="credito">
+                <p>Desenvolvido por <a href="https://github.com/fernandokotinda" target="_blank"><strong><em>&copy;FernandoKotinda</em></strong></a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="funcoes.js"></script>
+</body>
+</html>

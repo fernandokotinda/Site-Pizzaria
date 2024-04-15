@@ -1,10 +1,4 @@
 
-*{
-
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-}
 .inicio-menu {
 
     height: 400px;
@@ -30,12 +24,12 @@
     text-shadow: 7px 11px 1px black;
     backdrop-filter: blur(1px);
 }
-#menu ul li:nth-child(1) a, #menu ul li:nth-child(3)  {
+#menu ul li:nth-child(1) a, #menu ul li:nth-child(3) a{
 
     color: white;
 
 }
-#menu ul li:nth-child(2) a {
+#menu ul li:nth-child(2) a{
 
     color: brown;
 }
@@ -115,7 +109,7 @@ hr {
 
     font-family: 'font-h2';
     font-size: 30px;
-    color: rgb(255, 255, 255);
+    color: #cb914e;
     text-shadow: 1px 1px 1px black;
     letter-spacing: 1px;
     
@@ -143,6 +137,10 @@ hr {
 .bebidas h2 {
 
     padding: 60px;
+}
+.bebidas {
+
+    border-bottom: 2px solid black;
 }
 
 @media screen and (max-width: 1300px) {

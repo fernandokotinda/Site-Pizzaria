@@ -1,0 +1,457 @@
+
+.container-tamanho {
+
+    background-color: #efcca2;
+    border-bottom: 2px solid black;
+
+}
+.tamanho-pizza {
+
+    background-color: brown;
+    width: 230px;
+    height: 230px;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid black;
+    box-shadow: 3px 4px 15px 0px rgba(0, 0, 0, 0.695);
+    transition: all 0.4s ease;
+}
+.tamanho-pizza:hover {
+
+    background-color: rgb(130, 31, 31);
+    transform: scale(1.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+.choose-size {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    
+    padding: 0px 0px 50px ;
+
+}
+.inicio-pedido {
+
+    height: 400px;
+
+    background-image: url(imgs/imagem-fundo-pedido.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 2px solid black;
+    margin-top: 100px;
+}
+.pequena img  {
+
+    width: 100px;
+    height: 100px;
+
+    margin: 20px 0px;
+}
+.media img {
+
+    width: 120px;
+    height: 120px;
+
+    margin: 10px 0px;
+}
+.grande img {
+
+    width: 140px;
+    height: 140px;
+}
+#menu ul li:nth-child(1) a, #menu ul li:nth-child(2) a{
+
+    color: white;
+
+}
+#menu ul li:nth-child(3) a {
+
+    color: brown;
+}
+.inicio-pedido h1 {
+
+    font-size: 170px;
+}
+.container-tamanho h2 {
+
+    font-family: 'font-h2';
+    text-align: center;
+    padding: 30px;
+
+    font-size: 45px;
+    color: #ab7d4a;
+    text-shadow: 3px 2px 0px rgb(0, 0, 0);
+    letter-spacing: 2px;
+}
+.tamanho-pizza h2 {
+    
+    color: white;
+}
+.choose-size h2 {
+
+    font-size: 20px;
+    padding: 0%;
+    padding-top: 10px;
+
+}
+.tamanho-pizza p {
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+    color: rgb(0, 0, 0);
+    padding-top: 5px;
+}
+.fundo-pedido {
+
+    background-color: #ab7d4a;
+    padding: 50px 0px;
+}
+.escolher-pizza {
+
+    background-color: #efcca2;
+    border-radius: 15px;
+    
+    width: 70%; 
+    height: 80%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid black;
+    box-shadow: 3px 2px 12px rgba(0, 0, 0, 0.686);
+}
+.escolher-pizza h2 {
+
+    text-align: center;
+
+    font-family: 'font-h2';
+    text-align: center;
+    padding: 30px;
+
+    font-size: 30px;
+    color: #ab7d4a;
+    text-shadow: 3px 2px 0px rgb(0, 0, 0);
+    letter-spacing: 2px;
+}
+.escolher-pizza img {
+
+    width: 150px;
+    height: 150px;
+
+}
+.pizza {
+
+    justify-content: center;
+    padding-left: 10px;
+    margin-bottom: 40px;
+    width: 650px;
+}
+.pizza:hover {
+
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.666);
+    background-color: #ab7d4a;
+    cursor: pointer;
+}
+.container-pizza {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0px;
+}
+.preco {
+
+    display: block;
+}
+input[type="button"], input[type="submit"] {
+
+    background-color: brown;
+    color: white;
+    margin-bottom: 40px;
+    transition: all 0.3s;
+}
+input[type="button"]:hover, input[type="submit"]:hover {
+
+    background-color: rgb(131, 35, 35);
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.container-pagamento {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.container-pagamento img {
+
+    width: 70px;
+    height: 70px;
+}
+.pag {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 10px;
+
+    width: 180px;
+
+}
+.pag h3 {
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.pag:hover {
+
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.666);
+    background-color: #ab7d4a;
+    cursor: pointer;
+
+}
+.entrega {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+
+    margin-bottom: 40px;
+}
+input[type="radio"] {
+
+    width: 15px;
+    height: 15px;
+}
+hr {
+
+    width: 85%;
+    margin: 0%;
+    margin-top: 30px;
+}
+.hr-entrega {
+
+    margin-top: 0px;
+
+}
+.radio {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+.linha {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    margin-bottom: 30px;
+}
+.flex {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.linha label {
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.linha input, select {
+
+    border-radius: 5px;
+    width: 170px;
+    height: 30px;
+    padding: 5px;
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.703);
+}
+.size input, .size select {
+    width: 275px;
+}
+input[type="submit"] {
+
+    display: block;
+    margin: 40px auto 30px;
+
+}
+.botoes {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    margin-top: 50px;
+}
+.botoes input[type="button"]:first-child {
+
+    background-color: rgb(0, 66, 0);
+}
+.pedido{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    
+}
+.borda {
+
+    border-right: 2px solid black;
+    padding-right: 70px;
+}
+.pad {
+    padding-left: 70px;
+    
+}
+.borda p, .pad p {
+
+    padding: 10px;
+}
+.pad2 {
+
+    padding-left: 150px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 100;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    background-color: rgb(0, 66, 0);
+    margin: auto;
+    width: 30%;
+    gap: 20px;
+    height: auto;
+    text-align: center;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    transition: 0.5s;
+    font-family: 'Dosis', sans-serif;
+    font-size: 22px;
+    border: 2px solid black;
+    box-shadow: rgba(0, 0, 0, 0.563) 1px 2px 8px;
+
+}
+.head-popUp {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alerta img {
+    margin-top: 20px;
+    width: 35px;
+    height: 35px;
+}
+.fechar {
+    margin-left: auto;
+    color: brown;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.fechar:hover {
+    color: rgb(125, 32, 32);
+    transition: 0.2s;
+}
+
+#ok {
+
+    background-color: brown;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 8px;
+    width: 20%;
+    margin-left: auto;
+    border: 2px solid #00000091;
+    box-shadow: rgba(0, 0, 0, 0.473) 3px 5px 12px;
+    transition: 0.2s;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 17px;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+#ok:hover {
+
+    background-color: rgb(125, 32, 32);
+}
+.popUpMessage {
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+         
+}

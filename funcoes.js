@@ -18,18 +18,46 @@ function verificarTamanhoDaTela() {
 }
    
 
-    function abrirMenu() {
+function abrirMenu() {
 
-        let menuHamburger = document.querySelector(".menu-hamburger");
+    let menuHamburger = document.querySelector(".menu-hamburger");
 
-        if(menuHamburger.style.display == 'flex') {
-                
-            menuHamburger.style.display = 'none'
-            verificarTamanhoDaTela();
-                
-        } else {
-                
-            menuHamburger.style.display = 'flex'
-            verificarTamanhoDaTela();
-         }
+    if(menuHamburger.style.display == 'flex') {
+            
+        menuHamburger.style.display = 'none'
+        verificarTamanhoDaTela();
+            
+    } else {
+            
+        menuHamburger.style.display = 'flex'
+        verificarTamanhoDaTela();
+        }
+}
+ 
+function validarNumeros(input) {
+    input.value = input.value.replace(/\D/g, ''); 
+}
+
+function formatarTelefone(input) {
+   
+    var numero = input.value.replace(/\D/g, '');
+    
+    if (numero.length == 11) {
+        input.value = '(' + numero.substring(0, 2) + ') ' + numero.substring(2, 7) + '-' + numero.substring(7);
+    } else if (numero.length == 10) {
+        input.value = '(' + numero.substring(0, 2) + ') ' + numero.substring(2, 6) + '-' + numero.substring(6);
+    } else {
+        input.value = numero;
     }
+}
+
+function formatarCEP(input) {
+
+    var cep = input.value.replace(/\D/g, '');
+    
+    if (cep.length > 5) {
+        input.value = cep.substring(0, 5) + '-' + cep.substring(5);
+    } else {
+        input.value = cep;
+    }
+}
