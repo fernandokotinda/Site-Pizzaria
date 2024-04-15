@@ -61,3 +61,53 @@ function formatarCEP(input) {
         input.value = cep;
     }
 }
+
+document.querySelectorAll('.tamanho-pizza').forEach(function(div) {
+    div.addEventListener('click', function() {
+
+        let tamanhos = document.querySelector('#tamanhos');
+        let sabores = document.querySelector('#sabores');
+
+        tamanhos.style.display = 'none';
+        sabores.style.display = 'block';
+
+        let pizzaBarata = document.querySelectorAll('.preco .pizza-barata');
+        let pizzaCara = document.querySelectorAll('.preco .pizza-cara');
+
+        let tamanho = this.classList[1]; 
+
+        if(tamanho == 'pequena') {
+
+            pizzaBarata.forEach((element) => {
+                element.innerText = 'R$64,00';
+            });
+
+            pizzaCara.forEach((element) => {
+                element.innerText = 'R$68,00';
+            });  
+
+        } else if(tamanho == 'media') {
+
+            pizzaBarata.forEach((element) => {
+                element.innerText = 'R$76,00';
+            });
+
+            pizzaCara.forEach((element) => {
+                element.innerText = 'R$82,00';
+            });  
+
+        } else {
+
+            pizzaBarata.forEach((element) => {
+                element.innerText = 'R$88,00';
+            });
+
+            pizzaCara.forEach((element) => {
+                element.innerText = 'R$94,00';
+            });  
+        }
+
+
+        
+    });
+});
