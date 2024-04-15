@@ -85,6 +85,10 @@
 .inicio-pedido h1 {
 
     font-size: 170px;
+    width: 100%;
+    text-align: center;
+    text-shadow: 7px 11px 1px black;
+    
 }
 .container-tamanho h2 {
 
@@ -259,16 +263,22 @@ input[type="radio"] {
     width: 15px;
     height: 15px;
 }
-hr {
+.hr-pizzas {
+    width: 100%;
+    margin-left: 0%;
+    margin-bottom: 40px;
+    
+
+}
+.hr-entrega {   
 
     width: 85%;
     margin: 0%;
     margin-top: 30px;
+
 }
-.hr-entrega {
-
-    margin-top: 0px;
-
+.margin {
+    margin-top: 0px
 }
 .radio {
 
@@ -454,4 +464,66 @@ input[type="submit"] {
     font-weight: 500;
     font-style: normal;
          
+}
+
+@media screen and (max-width: 1300px) {
+
+    .inicio-pedido {
+
+        margin-top: 80px;
+    }
+    .inicio-pedido h1 {
+
+        font-size: 90px;
+        margin: auto;
+    }
+    .container-tamanho h2 {
+
+        font-size: 35px;
+    }
+    .escolher-pizza h2 {
+
+        font-size: 25px;
+    }
+    .choose-size {
+
+        flex-direction: column;
+    }
+ 
+    .tamanho-pizza h2 {
+
+        font-size: 20px;
+    }
+    .escolher-pizza {
+
+        width: 90%;
+    }
+    .pizza {
+
+        width: 300px;
+        height: 300px;
+    }
+    .nome-pizza {
+
+        padding-bottom: 10px;
+    }
+    .pizza h3 {
+
+        font-size: 25px;
+    }
+    .escolher-pizza h2 {
+
+        font-size: 25px;
+    }
+    .container-pagamento {
+
+        flex-direction: column;
+    }
+    .entrega {
+
+        flex-direction: column;
+        gap: 20px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
 }
