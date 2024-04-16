@@ -3,6 +3,7 @@
 #sabores {display: none}
 #drinks {display: none}
 #pagamento {display: none}
+#confirmacao {display: none}
 
 .container-tamanho {
 
@@ -342,6 +343,7 @@ input[type="radio"] {
     font-weight: 400;
     font-style: normal;
 
+    background-color: #fcc17e;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.703);
 }
 .size input, .size select {
@@ -485,6 +487,53 @@ input[type="submit"] {
     font-style: normal;
          
 }
+.final {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+
+    margin-top: 30px;
+    padding-top: 40px;
+    border-top: 2px solid black;
+
+}
+.borda h3 p, .pad h3 p {
+
+    font-size: 17px;
+    padding: 5px;
+    padding-top: 10px;   
+    
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.pad h3 p {
+
+    gap: 65px;
+}
+.borda h3 p span, .pad h3 p span {
+
+    font-weight: bold;
+    
+}
+.pedido span {
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px ;
+}
 
 @media screen and (max-width: 1300px) {
 
@@ -577,7 +626,7 @@ input[type="submit"] {
     .pad {
 
         padding-left: 0px;
-        padding-top: 20px;
+        padding-top: 0px;
     }
     .pedido {
 
@@ -588,6 +637,24 @@ input[type="submit"] {
         padding-left: 30px;
         font-size: 17px;
     }
+    .final {
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 20px;
+        padding-left: 30px;
+        font-size: 20px;
+
+        margin-top: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;   
+        border-top: 1px solid black;
+        
+
+    }
+
     .flex-col h2 {
 
         width: 100%;

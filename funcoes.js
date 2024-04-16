@@ -75,6 +75,7 @@ let selectedPizzaPrices = [];
 let selectedDrinkNames = [];
 let selectedDrinkPrices = [];
 let selectedPag = [];
+let campos = [];
 
 document.querySelectorAll('.tamanho-pizza').forEach(function(div) {
     div.addEventListener('click', function() {
@@ -237,19 +238,13 @@ let pagamentoTop = document.querySelector('.fundo-pedido').offsetTop;
 
 concluirBebida.addEventListener('click', () => {
 
-    if(selectedDrinkNames.length === 0) {
-        alert('Por favor, escolha de 1 a 3 Bebidas!');
-        return;
-
-    } else {
-
-        drinks.style.display = 'none';
-        pagamento.style.display = 'block';
-        window.scrollTo({
-            top: pagamentoTop + 400,
-            behavior: 'smooth'
-        });
-    }
+    drinks.style.display = 'none';
+    pagamento.style.display = 'block';
+    window.scrollTo({
+        top: pagamentoTop + 400,
+        behavior: 'smooth'
+    });
+    
 });
 
 //Escolher bebidas
@@ -266,7 +261,7 @@ pagamentos.forEach(pag => {
 
             this.classList.remove('escolhida-pag');
 
-            const drinkName = this.querySelector('.nome-bebida h3').textContent;
+            const drinkName = this.querySelector('.pag h3').textContent;
             const index = selectedPag.indexOf(drinkName);
             if (index !== -1) {
                 selectedPag.splice(index, 1);
@@ -324,8 +319,171 @@ concluirForm.addEventListener('click', (event) => {
     
     event.preventDefault();
 
-    
+    let confirmacaoTop = document.querySelector('.fundo-pedido').offsetTop;
+    let confirmacao = document.querySelector('#confirmacao');
 
+    if(selectedPag.length === 0) {
+
+        alert('Por favor, selecione uma forma de pagamento!');
+        return;
+
+    } else {
+
+        let name = document.querySelector('#name').value;
+        let surname = document.querySelector('#surname').value;
+        let telefone = document.querySelector('#telephone').value;
+        let email = document.querySelector('#email').value;
+        let cep = document.querySelector('#CEP').value;
+        let rua = document.querySelector('#endereco').value;
+        let numero = document.querySelector('#numero').value;
+        let complemento = document.querySelector('#complemento').value;
+        let bairro = document.querySelector('#bairro').value;
+        let estado = document.querySelector('#estado').value;
+        let cidade = document.querySelector('#cidade').value;
+
+        if (name.trim() === '' || surname.trim() === '' || telefone.trim() === '' || cep.trim() === '' || rua.trim() === ''
+        || numero.trim() === '' || bairro.trim() === '' || cidade.trim() === '') { 
+
+            alert('Preencha todos os campos obrigatorios');
+
+        } else {
+
+            campos = [name + surname, telefone, email, cep, rua + numero, complemento, bairro, estado,];
+
+            pagamento.style.display = 'none';
+            confirmacao.style.display = 'block';
+            window.scrollTo({
+                top: confirmacaoTop + 400,
+                behavior: 'smooth'
+            });
+        
+
+        }
+
+    }
+});
+
+let concluir = document.querySelector('.pagamentoConcluir');
+
+concluir.addEventListener('click', () => {
+
+    if(selectedPag.length === 0) {
+
+        alert('Por favor, selecione uma forma de pagamento!');
+        return;
+
+    } else {
+
+        let pizzaTop = document.querySelector('.fundo-pedido').offsetTop;
+
+        pagamento.style.display = 'none';
+        confirmacao.style.display = 'block';
+        window.scrollTo({
+            top: pizzaTop + 400,
+            behavior: 'smooth'
+        });
+    
+        // Tela final de confirmação 
+        let pizzasLista = document.querySelector('.escolhas .borda h3')
+        let bebidaLista = document.querySelector('.escolhas .pad h3')
+        
+        selectedPizzaNames.forEach((pizzaName, index) => {
+            const p = document.createElement("p");
+            const span = document.createElement("span");
+
+            p.textContent = '- ' + pizzaName;
+            span.textContent = selectedPizzaPrices[index];
+            p.appendChild(span);
+
+            pizzasLista.appendChild(p);
+       
+        });
+
+        selectedDrinkNames.forEach((drinkName, index) => {
+
+            const p = document.createElement("p");
+            const span = document.createElement("span");
+
+            p.textContent = '- ' + drinkName;
+            span.textContent = selectedDrinkPrices[index];
+            p.appendChild(span);
+
+            bebidaLista.appendChild(p);
+
+        })
+
+
+       
+    }
+});
+
+let formConcluido = document.querySelector('.formConcluir');
+
+formConcluido.addEventListener('click', () => {
+
+    if(selectedPag.length === 0) {
+
+        alert('Por favor, selecione uma forma de pagamento!');
+        return;
+
+    } else {
+
+        let pizzaTop = document.querySelector('.fundo-pedido').offsetTop;
+
+        pagamento.style.display = 'none';
+        confirmacao.style.display = 'block';
+        window.scrollTo({
+            top: pizzaTop + 400,
+            behavior: 'smooth'
+        });
+    
+        // Tela final de confirmação 
+        let pizzasLista = document.querySelector('.escolhas .borda h3')
+        let bebidaLista = document.querySelector('.escolhas .pad h3')
+        
+        selectedPizzaNames.forEach((pizzaName, index) => {
+            const p = document.createElement("p");
+            const span = document.createElement("span");
+
+            p.textContent = '- ' + pizzaName;
+            span.textContent = selectedPizzaPrices[index];
+            p.appendChild(span);
+
+            pizzasLista.appendChild(p);
+       
+        });
+
+        selectedDrinkNames.forEach((drinkName, index) => {
+
+            const p = document.createElement("p");
+            const span = document.createElement("span");
+
+            p.textContent = '- ' + drinkName;
+            span.textContent = selectedDrinkPrices[index];
+            p.appendChild(span);
+
+            bebidaLista.appendChild(p);
+
+        })
+
+        const spans = document.querySelectorAll('.dados span');
+
+        spans.forEach((span, index) => {
+
+ 
+
+                span.textContent = campos[index]; // Define o texto para o <span> atual usando o índice correspondente
+
+            
+        });
+
+
+       
+    }
 })
+
+
+
+
 
 
