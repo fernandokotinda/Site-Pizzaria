@@ -1,3 +1,4 @@
+// Função verifica tamnhado da tela e se adapta
 function verificarTamanhoDaTela() {
     window.addEventListener('resize', function() {
 
@@ -16,8 +17,8 @@ function verificarTamanhoDaTela() {
         }
     });
 }
-   
 
+// função para abrir menu hamburger
 function abrirMenu() {
 
     let menuHamburger = document.querySelector(".menu-hamburger");
@@ -33,7 +34,9 @@ function abrirMenu() {
         verificarTamanhoDaTela();
         }
 }
- 
+
+//=======Funções para formatar inputs no formulario========
+
 function validarNumeros(input) {
     input.value = input.value.replace(/\D/g, ''); 
 }
@@ -296,7 +299,7 @@ function atualizarExibicao() {
 
         form.style.display = 'none';
         hr.style.display = 'none';
-        concluirPagamento.style.display ='block'
+        concluirPagamento.style.display ='block';
 
     } else if (entregarEndereco.checked) {
 
@@ -437,15 +440,22 @@ concluirForm.addEventListener('click', (event) => {
         
 
         }
-
-
     }
 });
 
 //Concluir pagamento sem form
 let concluir = document.querySelector('.pagamentoConcluir');
+let confirmacaoTop = document.querySelector('.fundo-pedido').offsetTop;
+let confirmacao = document.querySelector('#confirmacao');
 
 concluir.addEventListener('click', () => {
+
+    pagamento.style.display = 'none';
+    confirmacao.style.display = 'block';
+    window.scrollTo({
+        top: confirmacaoTop + 400,
+        behavior: 'smooth'
+    });
 
     if(selectedPag.length === 0) {
 
@@ -454,7 +464,7 @@ concluir.addEventListener('click', () => {
 
     } else {
     
-        // Tela final de confirmação 
+        // Tela final de confirmação
         let pizzasLista = document.querySelector('.escolhas .borda h3')
         let bebidaLista = document.querySelector('.escolhas .pad h3')
         
@@ -558,6 +568,7 @@ fechar.addEventListener('click', () =>{
     popUp.style.display = 'none';
     location.reload();
 })
+
 
 
 
