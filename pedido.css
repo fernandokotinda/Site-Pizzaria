@@ -703,3 +703,15 @@ input[type="submit"] {
         width: 250px;
     }
 }
+
+@media print {
+    
+    header, .inicio-pedido, footer, .finalizar, .imprimir {
+        display: none
+    }
+    .escolher-pizza {
+
+        width: 100%;
+    }
+    
+}
