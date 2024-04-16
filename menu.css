@@ -69,7 +69,7 @@ hr {
 
     
 }
-.pizza {
+.pizza, .bebida{
 
     display: flex;
     align-items: center;
@@ -105,7 +105,7 @@ hr {
 
     font-size: 20px;
 }
-.pizza h3 {
+.pizza h3, .bebida h3 {
 
     font-family: 'font-h2';
     font-size: 30px;
@@ -114,7 +114,7 @@ hr {
     letter-spacing: 1px;
     
 }
-.nome-pizza {
+.nome-pizza, .nome-bebida {
 
     display: flex;
     flex-direction: column;
@@ -124,7 +124,7 @@ hr {
     
     margin: 0px 20px;
 }
-.nome-pizza p {
+.nome-pizza p, .nome-bebida p {
 
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
@@ -154,23 +154,23 @@ hr {
 
         font-size: 90px;
     }
-    .container-pizza, .pizza {
+    .container-pizza, .pizza, .bebida {
 
         flex-direction: column;
         
 
     }
-    .pizza {
+    .pizza, .bebida {
 
         padding: 0px;
     }
-    .nome-pizza {
+    .nome-pizza, .nome-bebida {
 
         justify-content: center;
         align-items: center;
         padding: 15px 0px 30px;
     }
-    .nome-pizza p {
+    .nome-pizza p, .nome-bebida p {
 
         text-align: center;
     }

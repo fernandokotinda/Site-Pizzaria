@@ -62,20 +62,40 @@ function formatarCEP(input) {
     }
 }
 
+//=======Funções ao fazer pedido online=======
+
+// Escolher tamanho da pizza
+let tamanhos = document.querySelector('#tamanhos');
+let sabores = document.querySelector('#sabores');
+let drinks = document.querySelector('#drinks');
+let pagamento = document.querySelector('#pagamento');
+
+let selectedPizzaNames = [];
+let selectedPizzaPrices = [];
+let selectedDrinkNames = [];
+let selectedDrinkPrices = [];
+let selectedPag = [];
+
 document.querySelectorAll('.tamanho-pizza').forEach(function(div) {
     div.addEventListener('click', function() {
 
-        let tamanhos = document.querySelector('#tamanhos');
-        let sabores = document.querySelector('#sabores');
+
+        let pizzaTop = document.querySelector('.fundo-pedido').offsetTop;
+        
 
         tamanhos.style.display = 'none';
         sabores.style.display = 'block';
+        window.scrollTo({
+            top: pizzaTop + 400,
+            behavior: 'smooth'
+          });
 
         let pizzaBarata = document.querySelectorAll('.preco .pizza-barata');
         let pizzaCara = document.querySelectorAll('.preco .pizza-cara');
 
         let tamanho = this.classList[1]; 
 
+        //Colocar preços de acordo com o tamanho da pizza
         if(tamanho == 'pequena') {
 
             pizzaBarata.forEach((element) => {
@@ -106,8 +126,206 @@ document.querySelectorAll('.tamanho-pizza').forEach(function(div) {
                 element.innerText = 'R$94,00';
             });  
         }
-
-
-        
     });
 });
+
+//Escolher sabores pizzas
+let concluirPizza = document.querySelector('.pizzaConcluido');
+
+const pizzas = document.querySelectorAll('.pizza');
+
+pizzas.forEach(pizza => {
+    pizza.addEventListener('click', function() {
+
+        const pizzaSelecionada = this.classList.contains('escolhida');
+        
+        const pizzasEscolhidas = document.querySelectorAll('.escolhida');
+
+        if(pizzaSelecionada) {
+
+            this.classList.remove('escolhida');
+
+            const pizzaName = this.querySelector('.nome-pizza h3').textContent;
+            const index = selectedPizzaNames.indexOf(pizzaName);
+            if (index !== -1) {
+                selectedPizzaNames.splice(index, 1);
+                selectedPizzaPrices.splice(index, 1);
+            }
+
+        } else {
+
+            if (pizzasEscolhidas.length >= 3) {
+
+                pizzasEscolhidas[pizzasEscolhidas.length - 1].classList.remove('escolhida');
+                
+                selectedPizzaNames.pop();
+                selectedPizzaPrices.pop();
+
+            }
+
+            this.classList.add('escolhida');
+
+            selectedPizzaNames.push(this.querySelector('.nome-pizza h3').textContent);
+            selectedPizzaPrices.push(this.querySelector('.preco p').textContent);
+        }
+    });
+    
+});
+
+let drinksTop = document.querySelector('.fundo-pedido').offsetTop;
+
+concluirPizza.addEventListener('click', () => {
+
+    if(selectedPizzaNames.length === 0) {
+        alert('Por favor, escolha de 1 a 3 sabores de Pizza!');
+        return;
+
+    } else {
+
+        sabores.style.display = 'none';
+        drinks.style.display = 'block';
+        window.scrollTo({
+            top: drinksTop + 400,
+            behavior: 'smooth'
+        });
+    }
+});
+
+//Escolher bebidas
+const bebidas = document.querySelectorAll('.bebida');
+
+bebidas.forEach(bebida => {
+    bebida.addEventListener('click', function() {
+
+        const bebidaSelecionada = this.classList.contains('escolhida-bebida');
+        
+        const bebidaEscolhidas = document.querySelectorAll('.escolhida-bebida');
+
+        if(bebidaSelecionada) {
+
+            this.classList.remove('escolhida-bebida');
+
+            const drinkName = this.querySelector('.nome-bebida h3').textContent;
+            const index = selectedDrinkNames.indexOf(drinkName);
+            if (index !== -1) {
+                selectedDrinkNames.splice(index, 1);
+                selectedDrinkPrices.splice(index, 1);
+            }
+
+        } else {
+
+            if (bebidaEscolhidas.length >= 3) {
+
+                bebidaEscolhidas[bebidaEscolhidas.length - 1].classList.remove('escolhida-bebida');
+                
+                selectedDrinkNames.pop();
+                selectedDrinkPrices.pop();
+
+            }
+
+            this.classList.add('escolhida-bebida');
+
+            selectedDrinkNames.push(this.querySelector('.nome-bebida h3').textContent);
+            selectedDrinkPrices.push(this.querySelector('.preco p').textContent);
+        }
+    });
+});
+
+let concluirBebida = document.querySelector('.bebidaConcluido');
+
+let pagamentoTop = document.querySelector('.fundo-pedido').offsetTop;
+
+concluirBebida.addEventListener('click', () => {
+
+    if(selectedDrinkNames.length === 0) {
+        alert('Por favor, escolha de 1 a 3 Bebidas!');
+        return;
+
+    } else {
+
+        drinks.style.display = 'none';
+        pagamento.style.display = 'block';
+        window.scrollTo({
+            top: pagamentoTop + 400,
+            behavior: 'smooth'
+        });
+    }
+});
+
+//Escolher bebidas
+const pagamentos = document.querySelectorAll('.pag');
+
+pagamentos.forEach(pag => {
+    pag.addEventListener('click', function() {
+
+        const pagSelecionado = this.classList.contains('escolhida-pag');
+        
+        const pagEscolhido = document.querySelectorAll('.escolhida-pag');
+
+        if(pagSelecionado) {
+
+            this.classList.remove('escolhida-pag');
+
+            const drinkName = this.querySelector('.nome-bebida h3').textContent;
+            const index = selectedPag.indexOf(drinkName);
+            if (index !== -1) {
+                selectedPag.splice(index, 1);
+            }
+
+        } else {
+
+            if (pagEscolhido.length >= 1) {
+
+                pagEscolhido[pagEscolhido.length - 1].classList.remove('escolhida-pag');
+                
+                selectedPag.pop();
+
+            }
+
+            this.classList.add('escolhida-pag');
+
+            selectedPag.push(this.querySelector('.pag h3').textContent);
+        }
+    });
+});
+
+// Exibição do formulario
+let buscarPizzaria = document.querySelector('#deliveryInPlace');
+let entregarEndereco = document.querySelector('#deliveryInHome');
+let form = document.querySelector('#local-entrega');
+let hr = document.querySelector('.margin');
+let concluirPagamento = document.querySelector('.pagamentoConcluir');
+
+function atualizarExibicao() {
+    if (buscarPizzaria.checked) {
+
+        form.style.display = 'none';
+        hr.style.display = 'none';
+        concluirPagamento.style.display ='block'
+
+    } else if (entregarEndereco.checked) {
+
+        form.style.display = 'block';
+        hr.style.display = 'block';
+        concluirPagamento.style.display ='none'
+
+    }
+}
+
+buscarPizzaria.addEventListener('change', atualizarExibicao);
+entregarEndereco.addEventListener('change', atualizarExibicao);
+
+atualizarExibicao();
+
+//Pegar informações formulário
+let concluirForm = document.querySelector('.formConcluir');
+
+concluirForm.addEventListener('click', (event) => {
+    
+    event.preventDefault();
+
+    
+
+})
+
+

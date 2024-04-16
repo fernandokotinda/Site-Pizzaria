@@ -1,6 +1,8 @@
 
-#sabores {display: none}
 #tamanhos {display: block}
+#sabores {display: none}
+#drinks {display: none}
+#pagamento {display: none}
 
 .container-tamanho {
 
@@ -165,20 +167,32 @@
     height: 150px;
 
 }
-.pizza {
+.pizza, .bebida {
 
     justify-content: center;
     padding-left: 10px;
     margin-bottom: 40px;
     width: 650px;
+    transition: all 0.4s;
 }
-.pizza:hover {
+.pizza:hover, .bebida:hover {
+
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.666);
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.4s;
+    padding: 5px;
+}
+.escolhida, .escolhida-bebida, .escolhida-pag {
 
     border: 1px solid black;
     border-radius: 20px;
     box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.666);
     background-color: #ab7d4a;
     cursor: pointer;
+
 }
 .container-pizza {
 
@@ -230,6 +244,8 @@ input[type="button"]:hover, input[type="submit"]:hover {
     padding: 10px;
 
     width: 180px;
+    transition: all 0.4s;
+
 
 }
 .pag h3 {
@@ -240,11 +256,12 @@ input[type="button"]:hover, input[type="submit"]:hover {
 }
 .pag:hover {
 
-    border-radius: 10px;
+    border-radius: 20px;
     border: 2px solid black;
     box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.666);
-    background-color: #ab7d4a;
     cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.4s;
 
 }
 .entrega {
@@ -501,16 +518,16 @@ input[type="submit"] {
 
         width: 90%;
     }
-    .pizza {
+    .pizza, .bebida {
 
         width: 300px;
         height: 300px;
     }
-    .nome-pizza {
+    .nome-pizza, .nome-bebida {
 
         padding-bottom: 10px;
     }
-    .pizza h3 {
+    .pizza h3, .bebida h3 {
 
         font-size: 25px;
     }
