@@ -371,7 +371,7 @@ input[type="submit"] {
 .pedido{
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
     font-family: "Ubuntu", sans-serif;
@@ -506,8 +506,7 @@ input[type="submit"] {
 .borda h3 p, .pad h3 p {
 
     font-size: 17px;
-    padding: 5px;
-    padding-top: 10px;   
+    padding: 10px; 
     
     font-family: "Ubuntu", sans-serif;
     font-weight: 400;
@@ -527,12 +526,20 @@ input[type="submit"] {
     font-weight: bold;
     
 }
-.pedido span {
+.pedido span, .final span {
 
     font-family: "Ubuntu", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 17px ;
+}
+.final .valorPagar {
+
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: brown;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 1300px) {

@@ -76,6 +76,7 @@ let selectedDrinkNames = [];
 let selectedDrinkPrices = [];
 let selectedPag = [];
 let campos = [];
+let pagamentoFinal = [];
 
 document.querySelectorAll('.tamanho-pizza').forEach(function(div) {
     div.addEventListener('click', function() {
@@ -348,7 +349,7 @@ concluirForm.addEventListener('click', (event) => {
 
         } else {
 
-            campos = [name + surname, telefone, email, cep, rua + numero, complemento, bairro, estado,];
+            campos = [name + ' ' + surname, telefone, email, cep, rua + ' ' + numero, complemento, bairro, estado, cidade];
 
             pagamento.style.display = 'none';
             confirmacao.style.display = 'block';
@@ -412,6 +413,38 @@ concluir.addEventListener('click', () => {
 
         })
 
+        let somaPizza = 0;
+        let somaBebida = 0;
+        let media;
+
+        for (let i = 0; i < selectedPizzaPrices.length; i++) {
+
+            let valorSemR = selectedPizzaPrices[i].replace('R$', '').trim();
+            let valorFormatado = valorSemR.replace(',', '.');
+            somaPizza += parseFloat(valorFormatado);
+
+        }
+
+        for (let i = 0; i < selectedDrinkPrices.length; i++) {
+
+            let valorSemR = selectedDrinkPrices[i].replace('R$', '').trim();
+            let valorFormatado = valorSemR.replace(',', '.');
+            somaBebida += parseFloat(valorFormatado);
+
+        }
+        media = (somaPizza / selectedPizzaPrices.length) + (somaBebida);
+
+
+        pagamentoFinal = [selectedPag, 'R$' + (media).toFixed(2)]
+
+        const spanFinal = document.querySelectorAll('.final span');
+
+        spanFinal.forEach((span, index) => {
+
+            span.textContent = pagamentoFinal[index];
+        })
+
+
 
        
     }
@@ -470,17 +503,51 @@ formConcluido.addEventListener('click', () => {
 
         spans.forEach((span, index) => {
 
- 
+            span.textContent = campos[index]; 
 
-                span.textContent = campos[index]; // Define o texto para o <span> atual usando o índice correspondente
-
-            
         });
 
 
+        let somaPizza = 0;
+        let somaBebida = 0;
+        let media;
+
+        for (let i = 0; i < selectedPizzaPrices.length; i++) {
+
+            let valorSemR = selectedPizzaPrices[i].replace('R$', '').trim();
+            let valorFormatado = valorSemR.replace(',', '.');
+            somaPizza += parseFloat(valorFormatado);
+
+        }
+
+        for (let i = 0; i < selectedDrinkPrices.length; i++) {
+
+            let valorSemR = selectedDrinkPrices[i].replace('R$', '').trim();
+            let valorFormatado = valorSemR.replace(',', '.');
+            somaBebida += parseFloat(valorFormatado);
+
+        }
+
+        media = (somaPizza / selectedPizzaPrices.length) + (somaBebida);
+
+        pagamentoFinal = [selectedPag, 'R$' + (media).toFixed(2)]
+
+        const spanFinal = document.querySelectorAll('.final span');
+
+        spanFinal.forEach((span, index) => {
+
+            span.textContent = pagamentoFinal[index];
+        })
        
     }
 })
+
+// Imprimir Tela
+const btnImprimir = document.querySelector(".imprimir");
+
+btnImprimir.addEventListener("click", function() {
+    window.print(); 
+});
 
 
 
