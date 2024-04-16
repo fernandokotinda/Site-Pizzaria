@@ -383,10 +383,10 @@ input[type="submit"] {
 .borda {
 
     border-right: 2px solid black;
-    padding-right: 70px;
+    padding-right: 0px;
 }
 .pad {
-    padding-left: 70px;
+    padding-left: 20px;
     
 }
 .borda p, .pad p {
@@ -395,7 +395,7 @@ input[type="submit"] {
 }
 .pad2 {
 
-    padding-left: 150px;
+    padding-left: 50px;
 }
 .modal {
     display: none;
@@ -502,6 +502,10 @@ input[type="submit"] {
     padding-top: 40px;
     border-top: 2px solid black;
 
+}
+.borda h3 {
+
+    padding-right: 30px;
 }
 .borda h3 p, .pad h3 p {
 
@@ -706,6 +710,9 @@ input[type="submit"] {
 
 @media print {
     
+    @page {
+        size: landscape;
+    }
     header, .inicio-pedido, footer, .finalizar, .imprimir {
         display: none
     }

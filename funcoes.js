@@ -44,8 +44,6 @@ function formatarTelefone(input) {
     
     if (numero.length == 11) {
         input.value = '(' + numero.substring(0, 2) + ') ' + numero.substring(2, 7) + '-' + numero.substring(7);
-    } else if (numero.length == 10) {
-        input.value = '(' + numero.substring(0, 2) + ') ' + numero.substring(2, 6) + '-' + numero.substring(6);
     } else {
         input.value = numero;
     }
@@ -69,6 +67,7 @@ let tamanhos = document.querySelector('#tamanhos');
 let sabores = document.querySelector('#sabores');
 let drinks = document.querySelector('#drinks');
 let pagamento = document.querySelector('#pagamento');
+let popUp = document.querySelector('#popUp');
 
 let selectedPizzaNames = [];
 let selectedPizzaPrices = [];
@@ -357,13 +356,93 @@ concluirForm.addEventListener('click', (event) => {
                 top: confirmacaoTop + 400,
                 behavior: 'smooth'
             });
+
+            if(selectedPag.length === 0) {
+
+                alert('Por favor, selecione uma forma de pagamento!');
+                return;
+        
+            } else {
+            
+                // Tela final de confirmação 
+                let pizzasLista = document.querySelector('.escolhas .borda h3')
+                let bebidaLista = document.querySelector('.escolhas .pad h3')
+                
+                selectedPizzaNames.forEach((pizzaName, index) => {
+                    const p = document.createElement("p");
+                    const span = document.createElement("span");
+        
+                    p.textContent = '- ' + pizzaName;
+                    span.textContent = selectedPizzaPrices[index];
+                    p.appendChild(span);
+        
+                    pizzasLista.appendChild(p);
+               
+                });
+        
+                selectedDrinkNames.forEach((drinkName, index) => {
+        
+                    const p = document.createElement("p");
+                    const span = document.createElement("span");
+        
+                    p.textContent = '- ' + drinkName;
+                    span.textContent = selectedDrinkPrices[index];
+                    p.appendChild(span);
+        
+                    bebidaLista.appendChild(p);
+        
+                })
+        
+                const spans = document.querySelectorAll('.dados span');
+        
+                spans.forEach((span, index) => {
+        
+                    span.textContent = campos[index]; 
+        
+                });
+        
+        
+                let somaPizza = 0;
+                let somaBebida = 0;
+                let media;
+        
+                for (let i = 0; i < selectedPizzaPrices.length; i++) {
+        
+                    let valorSemR = selectedPizzaPrices[i].replace('R$', '').trim();
+                    let valorFormatado = valorSemR.replace(',', '.');
+                    somaPizza += parseFloat(valorFormatado);
+        
+                }
+        
+                for (let i = 0; i < selectedDrinkPrices.length; i++) {
+        
+                    let valorSemR = selectedDrinkPrices[i].replace('R$', '').trim();
+                    let valorFormatado = valorSemR.replace(',', '.');
+                    somaBebida += parseFloat(valorFormatado);
+        
+                }
+        
+                media = (somaPizza / selectedPizzaPrices.length) + (somaBebida);
+        
+                pagamentoFinal = [selectedPag, 'R$' + (media).toFixed(2)]
+        
+                const spanFinal = document.querySelectorAll('.final span');
+        
+                spanFinal.forEach((span, index) => {
+        
+                    span.textContent = pagamentoFinal[index];
+                })
+               
+            }
         
 
         }
 
+
     }
 });
 
+//Concluir pagamento sem form
 let concluir = document.querySelector('.pagamentoConcluir');
 
 concluir.addEventListener('click', () => {
@@ -374,15 +453,6 @@ concluir.addEventListener('click', () => {
         return;
 
     } else {
-
-        let pizzaTop = document.querySelector('.fundo-pedido').offsetTop;
-
-        pagamento.style.display = 'none';
-        confirmacao.style.display = 'block';
-        window.scrollTo({
-            top: pizzaTop + 400,
-            behavior: 'smooth'
-        });
     
         // Tela final de confirmação 
         let pizzasLista = document.querySelector('.escolhas .borda h3')
@@ -449,98 +519,6 @@ concluir.addEventListener('click', () => {
        
     }
 });
-
-let formConcluido = document.querySelector('.formConcluir');
-
-formConcluido.addEventListener('click', () => {
-
-    if(selectedPag.length === 0) {
-
-        alert('Por favor, selecione uma forma de pagamento!');
-        return;
-
-    } else {
-
-        let pizzaTop = document.querySelector('.fundo-pedido').offsetTop;
-
-        pagamento.style.display = 'none';
-        confirmacao.style.display = 'block';
-        window.scrollTo({
-            top: pizzaTop + 400,
-            behavior: 'smooth'
-        });
-    
-        // Tela final de confirmação 
-        let pizzasLista = document.querySelector('.escolhas .borda h3')
-        let bebidaLista = document.querySelector('.escolhas .pad h3')
-        
-        selectedPizzaNames.forEach((pizzaName, index) => {
-            const p = document.createElement("p");
-            const span = document.createElement("span");
-
-            p.textContent = '- ' + pizzaName;
-            span.textContent = selectedPizzaPrices[index];
-            p.appendChild(span);
-
-            pizzasLista.appendChild(p);
-       
-        });
-
-        selectedDrinkNames.forEach((drinkName, index) => {
-
-            const p = document.createElement("p");
-            const span = document.createElement("span");
-
-            p.textContent = '- ' + drinkName;
-            span.textContent = selectedDrinkPrices[index];
-            p.appendChild(span);
-
-            bebidaLista.appendChild(p);
-
-        })
-
-        const spans = document.querySelectorAll('.dados span');
-
-        spans.forEach((span, index) => {
-
-            span.textContent = campos[index]; 
-
-        });
-
-
-        let somaPizza = 0;
-        let somaBebida = 0;
-        let media;
-
-        for (let i = 0; i < selectedPizzaPrices.length; i++) {
-
-            let valorSemR = selectedPizzaPrices[i].replace('R$', '').trim();
-            let valorFormatado = valorSemR.replace(',', '.');
-            somaPizza += parseFloat(valorFormatado);
-
-        }
-
-        for (let i = 0; i < selectedDrinkPrices.length; i++) {
-
-            let valorSemR = selectedDrinkPrices[i].replace('R$', '').trim();
-            let valorFormatado = valorSemR.replace(',', '.');
-            somaBebida += parseFloat(valorFormatado);
-
-        }
-
-        media = (somaPizza / selectedPizzaPrices.length) + (somaBebida);
-
-        pagamentoFinal = [selectedPag, 'R$' + (media).toFixed(2)]
-
-        const spanFinal = document.querySelectorAll('.final span');
-
-        spanFinal.forEach((span, index) => {
-
-            span.textContent = pagamentoFinal[index];
-        })
-       
-    }
-})
 
 // Imprimir Tela
 const btnImprimir = document.querySelector(".imprimir");
@@ -548,6 +526,38 @@ const btnImprimir = document.querySelector(".imprimir");
 btnImprimir.addEventListener("click", function() {
     window.print(); 
 });
+
+//Finalizar pedido
+let finalizarPedido = document.querySelector('.finalizar');
+
+finalizarPedido.addEventListener('click', () => {
+
+    let Top = document.querySelector('.fundo-pedido').offsetTop;
+
+    confirmacao.style.display = 'none';
+    tamanhos.style.display = 'block';
+    popUp.style.display = 'block';
+    window.scrollTo({
+        top: Top - 400,
+        behavior: 'smooth'
+    });
+
+})
+
+//Fechar PopUp
+let ok = document.querySelector('#ok');
+let fechar = document.querySelector('#fecharPopUp');
+
+ok.addEventListener('click', () =>{
+
+    popUp.style.display = 'none';
+    location.reload();
+})
+fechar.addEventListener('click', () =>{
+
+    popUp.style.display = 'none';
+    location.reload();
+})
 
 
 
