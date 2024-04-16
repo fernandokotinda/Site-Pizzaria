@@ -706,6 +706,10 @@ input[type="submit"] {
 
         width: 250px;
     }
+    .modal-content {
+
+        width: 90%;
+    }
 }
 
 @media print {
